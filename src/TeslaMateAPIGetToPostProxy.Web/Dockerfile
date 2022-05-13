@@ -18,4 +18,5 @@ RUN dotnet publish "TeslaMateAPIGetToPostProxy.Web.csproj" -c Release -o /app/pu
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+EXPOSE 3000
 ENTRYPOINT ["dotnet", "TeslaMateAPIGetToPostProxy.Web.dll"]
