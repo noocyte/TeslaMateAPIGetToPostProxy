@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build .\src\ --file .\src\TeslaMateAPIGetToPostProxy.Web\Dockerfile --tag TeslaMateAPIGetToPostProxy:$(date +%s) --tag TeslaMateAPIGetToPostProxy:latest
+      run: docker build .\src\ --file .\src\TeslaMateAPIGetToPostProxy.Web\Dockerfile --tag teslamateapigettopostproxy:$(date +%s) --tag teslamateapigettopostproxy:latest
