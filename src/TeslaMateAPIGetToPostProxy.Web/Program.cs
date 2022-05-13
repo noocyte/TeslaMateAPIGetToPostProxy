@@ -39,4 +39,4 @@ app.MapGet("/charge", async (string token, IHttpClientFactory factory) =>
     return body;
 });
 
-app.Run("http://localhost:3000");
+app.Run("http://*:3000");
