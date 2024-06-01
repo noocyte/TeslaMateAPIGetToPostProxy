@@ -1,4 +1,4 @@
-﻿namespace TeslaMateAPIGetToPostProxy.Web
+﻿namespace TeslamateAPIGetProxy
 {
     public static class Constants
     {
