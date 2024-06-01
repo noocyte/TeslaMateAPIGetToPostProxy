@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaMateAPIGetToPostProxy.Web", "TeslaMateAPIGetToPostProxy.Web\TeslaMateAPIGetToPostProxy.Web.csproj", "{7ECE0B5E-3F61-40EF-A06D-047BCE88398C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslamateAPIGetProxy", "TeslamateAPIGetProxy\TeslamateAPIGetProxy.csproj", "{CEE010BD-CDC8-4ED5-AC24-11D4DAB3C15A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7ECE0B5E-3F61-40EF-A06D-047BCE88398C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ECE0B5E-3F61-40EF-A06D-047BCE88398C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ECE0B5E-3F61-40EF-A06D-047BCE88398C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7ECE0B5E-3F61-40EF-A06D-047BCE88398C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE010BD-CDC8-4ED5-AC24-11D4DAB3C15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE010BD-CDC8-4ED5-AC24-11D4DAB3C15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE010BD-CDC8-4ED5-AC24-11D4DAB3C15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE010BD-CDC8-4ED5-AC24-11D4DAB3C15A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

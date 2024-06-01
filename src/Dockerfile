@@ -1,22 +1,21 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER app
 WORKDIR /app
-EXPOSE 80
+EXPOSE 8080
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/TeslaMateAPIGetToPostProxy.Web/TeslaMateAPIGetToPostProxy.Web.csproj", "TeslaMateAPIGetToPostProxy.Web/"]
-RUN dotnet restore "TeslaMateAPIGetToPostProxy.Web/TeslaMateAPIGetToPostProxy.Web.csproj"
+COPY ["TeslamateAPIGetProxy/TeslamateAPIGetProxy.csproj", "TeslamateAPIGetProxy/"]
+RUN dotnet restore "./TeslamateAPIGetProxy/TeslamateAPIGetProxy.csproj"
 COPY . .
-WORKDIR "/src/TeslaMateAPIGetToPostProxy.Web"
-RUN dotnet build "TeslaMateAPIGetToPostProxy.Web.csproj" -c Release -o /app/build
+RUN dotnet build "./TeslamateAPIGetProxy/TeslamateAPIGetProxy.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "TeslaMateAPIGetToPostProxy.Web.csproj" -c Release -o /app/publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./TeslamateAPIGetProxy/TeslamateAPIGetProxy.csproj" -c $BUILD_CONFIGURATION -o /app/publish 
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-EXPOSE 3000
-ENTRYPOINT ["dotnet", "TeslaMateAPIGetToPostProxy.Web.dll"]
+ENTRYPOINT ["dotnet", "TeslamateAPIGetProxy.dll"]
