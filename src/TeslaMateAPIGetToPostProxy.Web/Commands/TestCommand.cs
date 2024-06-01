@@ -6,7 +6,7 @@
         {
             var client = factory.CreateClient(Constants.ClientName);
 
-            var response = await client.GetAsync("/api/v1/cars/1/command");
+            var response = await client.GetAsync("/api/v1/cars/2/command");
             var body = await response.Content.ReadAsStringAsync();
             logger.LogInformation(body);
             return Results.Ok(body);
