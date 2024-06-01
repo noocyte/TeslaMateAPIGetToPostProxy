@@ -6,7 +6,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["TeslaMateAPIGetToPostProxy.Web/TeslaMateAPIGetToPostProxy.Web.csproj", "TeslaMateAPIGetToPostProxy.Web/"]
+COPY ["src/TeslaMateAPIGetToPostProxy.Web/TeslaMateAPIGetToPostProxy.Web.csproj", "TeslaMateAPIGetToPostProxy.Web/"]
 RUN dotnet restore "TeslaMateAPIGetToPostProxy.Web/TeslaMateAPIGetToPostProxy.Web.csproj"
 COPY . .
 WORKDIR "/src/TeslaMateAPIGetToPostProxy.Web"
