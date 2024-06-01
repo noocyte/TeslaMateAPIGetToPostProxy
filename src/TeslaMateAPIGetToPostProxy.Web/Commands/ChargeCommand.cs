@@ -14,7 +14,7 @@ namespace TeslaMateAPIGetToPostProxy.Web.Commands
             do
             {
                 counter++;
-                var wakeResponse = await client.PostAsJsonAsync("/api/v1/cars/1/wake_up", new { });
+                var wakeResponse = await client.PostAsJsonAsync("/api/v1/cars/2/wake_up", new { });
                 if (!wakeResponse.IsSuccessStatusCode)
                 {
                     var wakeResponseBody = wakeResponse.Content.ReadAsStringAsync();
@@ -45,7 +45,7 @@ namespace TeslaMateAPIGetToPostProxy.Web.Commands
                 return Results.Problem(detail: "Wakeup failed", statusCode: 500);
             }
 
-            var chargeResponse = await client.PostAsJsonAsync("/api/v1/cars/1/command/charge_port_door_open", new { });
+            var chargeResponse = await client.PostAsJsonAsync("/api/v1/cars/2/command/charge_port_door_open", new { });
             var body = await chargeResponse.Content.ReadAsStringAsync();
             logger.LogInformation("Response from Charge Command: {response}", body);
 
